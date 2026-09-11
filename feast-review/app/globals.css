@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --admin-ink: #16181d;
+  --admin-ink-muted: #6b6a64;
+  --admin-paper: #f3f1ec;
+  --admin-surface: #ffffff;
+  --admin-border: #e4e1d9;
+  --admin-primary: #2f5d50;
+  --admin-primary-hover: #24473d;
+  --admin-gold: #e3a33e;
+  --admin-brick: #b3412c;
+  --admin-font-display: "Fraunces", Georgia, serif;
+  --admin-font-ui: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --admin-radius: 10px;
+}
+
+body {
+  background: var(--admin-paper);
+  color: var(--admin-ink);
+  font-family: var(--admin-font-ui);
+}

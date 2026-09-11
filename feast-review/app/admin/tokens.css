@@ -1,0 +1,20 @@
+/* Admin panel design tokens.
+   Merge into your global stylesheet, or import this file from app/admin/layout.tsx.
+   Palette chosen deliberately for an ops dashboard, not a marketing page:
+   warm-neutral surface, deep pine primary (avoids the generic terracotta/cream
+   AI-dashboard look), muted gold for positive signal, brick for negative. */
+
+:root {
+  --admin-ink: #16181d;         /* primary text */
+  --admin-ink-muted: #6b6a64;   /* secondary text */
+  --admin-paper: #f3f1ec;       /* page background */
+  --admin-surface: #ffffff;     /* card background */
+  --admin-border: #e4e1d9;
+  --admin-primary: #2f5d50;     /* deep pine — brand/primary actions */
+  --admin-primary-hover: #24473d;
+  --admin-gold: #e3a33e;        /* ratings, positive highlight */
+  --admin-brick: #b3412c;       /* negative sentiment, destructive actions */
+  --admin-font-display: "Fraunces", Georgia, serif; /* page titles only */
+  --admin-font-ui: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --admin-radius: 10px;
+}
