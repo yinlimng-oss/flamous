@@ -3,6 +3,10 @@ import { getAdminContext } from "@/lib/supabase/server";
 import { Sidebar } from "@/components/admin/Sidebar";
 import "./tokens.css";
 
+// Every /admin page reads the signed-in admin's cookies (via Supabase auth) and shows
+// RLS-scoped, per-user data — it must never be statically pre-rendered at build time.
+export const dynamic = "force-dynamic";
+
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const ctx = await getAdminContext();
 
