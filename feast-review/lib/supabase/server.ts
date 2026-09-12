@@ -1,4 +1,4 @@
-import { createServerClient } from "@supabase/ssr";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
 // Uses the anon key + the signed-in admin's cookies, so every query is scoped
@@ -12,7 +12,7 @@ export async function createClient() {
     {
       cookies: {
         getAll: () => cookieStore.getAll(),
-        setAll: (cookiesToSet) => {
+        setAll: (cookiesToSet: { name: string; value: string; options?: CookieOptions }[]) => {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
@@ -44,7 +44,6 @@ export async function getAdminContext() {
   return {
     user,
     isGroupOrSuper,
-    // restricted admins may hold rows for more than one restaurant
     restaurantIds: adminRows.filter((r) => r.restaurant_id !== null).map((r) => r.restaurant_id as string),
     role: adminRows[0].role,
   };
